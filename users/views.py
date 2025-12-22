@@ -10,7 +10,7 @@ from .forms import CustomUserCreationForm
 def loginUser(request):
     page = "login"
 
-    if request.user.is_autheticated:
+    if request.user.is_authenticated:
         return render("profiles")
 
     if request.method == "POST":
@@ -36,7 +36,7 @@ def loginUser(request):
 
 def logoutUser(request):
     logout(request)
-    messages.error(request, "User was logged out")
+    messages.info(request, "User was logged out")
     return redirect("login")
 
 
