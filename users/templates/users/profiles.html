@@ -45,7 +45,7 @@
 
                 {% for skill in profile.skill_set.all|slice:"5" %}
                 <span class="tag tag--pill tag--main">
-                  <small>JavaScript</small>
+                  <small>{{skill}}</small>
                 </span>
                 {% endfor %}
                   
@@ -58,6 +58,8 @@
       </div>
     </div>
   </section>
+
+  {% include 'pagination.html' with queryset=profiles custom_range=custom_range %}
 </main>
 
 {% endblock content %}
